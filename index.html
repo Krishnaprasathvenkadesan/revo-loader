@@ -29,7 +29,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 3rem;
+      font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size */
+      white-space: nowrap; /* Prevent text from wrapping */
       animation: fade 3s ease-in-out forwards;
     }
 
@@ -58,7 +59,7 @@
 
     @keyframes appear {
       0% { width: 0; height: 0; opacity: 0; }
-      100% { width: 80px; height: 80px; opacity: 1; }
+      100% { width: clamp(60px, 15vw, 100px); height: clamp(60px, 15vw, 100px); opacity: 1; } /* Responsive circle size */
     }
 
     @keyframes glow {
@@ -67,7 +68,7 @@
     }
 
     @keyframes enlarge {
-      0% { width: 80px; height: 80px; opacity: 1; }
+      0% { width: clamp(60px, 15vw, 100px); height: clamp(60px, 15vw, 100px); opacity: 1; }
       100% { width: 200vmax; height: 200vmax; opacity: 0; }
     }
   </style>
